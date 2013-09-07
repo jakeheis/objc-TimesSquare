@@ -116,6 +116,13 @@
 {
     _beginningDate = date;
     
+    if (!self.dayButtons) {
+        [self createDayButtons];
+        [self createNotThisMonthButtons];
+        [self createTodayButton];
+        [self createSelectedButton];
+    }
+    
     NSDateComponents *offset = [NSDateComponents new];
     offset.day = 1;
 
@@ -194,12 +201,6 @@
 
 - (void)layoutSubviews;
 {
-    if (!self.dayButtons) {
-        [self createDayButtons];
-        [self createNotThisMonthButtons];
-        [self createTodayButton];
-        [self createSelectedButton];
-    }
     
     if (!self.backgroundView) {
         [self setBottomRow:NO];

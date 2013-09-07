@@ -174,7 +174,7 @@
 - (TSQCalendarMonthHeaderCell *)makeHeaderCellWithIdentifier:(NSString *)identifier;
 {
     TSQCalendarMonthHeaderCell *cell = [[[self headerCellClass] alloc] initWithCalendar:self.calendar reuseIdentifier:identifier];
-    cell.backgroundColor = self.backgroundColor;
+    cell.backgroundColor = [UIColor whiteColor];
     cell.calendarView = self;
     return cell;
 }
